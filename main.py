@@ -1,12 +1,15 @@
 from bot.bitcoin import Bitcoin
 from bot.dolar import Dolar_Value
+from bot.ibovespa import Ibov
 
 use_program = int(input('Deseja usar o programa:\n1) Sim\n2) Não\n'))
 while use_program == 1:
     user_option = int(input('1) Ver o preço do Bitcoin\n2) Ver o valor de uma carteira de Bitcoins\n'
                             '3) Ver o preço do dolar\n4) Ver o valor para uma quantidade x de Dolares\n'
                             '5) Preço do Bitcoin em dolar \n'
-                            '6) Preço de uma carteira com x Bitcoins em dolares\n'))
+                            '6) Preço de uma carteira com x Bitcoins em dolares\n'
+                            '7) Ver o preço do Ibovespa \n8) Ver o preço do Ibovespa em dolar\n'
+                            '9) Ver o preço do Ibovespa em Bitcoin\n'))
     if user_option == 1:
         print(f'R$ {Bitcoin().get_price():.2f}')
     elif user_option == 2:
@@ -27,4 +30,14 @@ while use_program == 1:
         dolar = Dolar_Value().get_price()
         price = float(bitcoin[3:]) / float(dolar[3:])
         print(f'${price:.2f}')
+    elif user_option == 7:
+        print(f'{Ibov().get_price()}')
+    elif user_option == 8:
+        ibov = Ibov().get_price()
+        dolar = Dolar_Value().get_price()
+        print(f'$ {(float(ibov[3:]) / float(dolar[3:])):.2f}')
+    elif user_option == 9:
+        ibov = Ibov().get_price()
+        bitcoin = Bitcoin().get_price()
+        print(f'₿ {(float(ibov[3:]) / float(bitcoin[3:])):.2f}')
     use_program = int(input('Deseja usar o programa novamente:\n1) Sim\n2) Não\n'))

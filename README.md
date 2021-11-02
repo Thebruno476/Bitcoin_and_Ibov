@@ -11,4 +11,4 @@ Este é um arquivo Python para encontrar o preço do Bitcoin em Dolar e em Real
   python3 -m venv venv
 
   Instalar os requisitos
-  pip install -r requiriments.txt 
+  pip install -r requirements.txt 
