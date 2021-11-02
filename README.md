@@ -1,6 +1,6 @@
 # Bitcoin_and_Ibov
 
-Este é um arquivo Python para encontrar o preço do Bitcoin em Dolar e em Real
+Este é um arquivo Python para encontrar o preço do Bitcoin e tambem do Índice Bovespa em Dolar e em Real
 
 # Instalação
 ``` 
