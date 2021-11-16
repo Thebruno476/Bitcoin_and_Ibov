@@ -11,6 +11,6 @@ class Dolar_Value:
 
     def calculate_value(self, dolars):
         self.price = self.get_price()
-        self.dolars = dolars
-        self.dolars_value = float(self.price) * float(self.dolars)
-        return f'R$ {self.dolars:.2f}'
+        self.price = self.price[2:]
+        self.dolars_value = float(self.price) * float(dolars)
+        return f'R$ {dolars:.2f}'
