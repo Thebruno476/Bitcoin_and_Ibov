@@ -22,7 +22,9 @@ while use_program == 1:
                             '7) Ver o preço do Ibovespa \n8) Ver o preço do Ibovespa em dolar\n'
                             '9) Ver o preço do Ibovespa em Bitcoin\n'))
     if user_option == 1:
-        print(f'R$ {Bitcoin().get_price():.2f}')
+        bitcoin_price = Bitcoin().get_price()
+        bitcoin_price = bitcoin_price[2:]
+        print(f'R$ {float(bitcoin_price):.2f}')
     elif user_option == 2:
         user_bitcoins = float(input('Digite a quantidade de Bitcoin que deseja ver o preço em reais: '))
         print(Bitcoin().calculate_value(user_bitcoins))

@@ -13,4 +13,4 @@ class Dolar_Value:
         self.price = self.get_price()
         self.price = self.price[2:]
         self.dolars_value = float(self.price) * float(dolars)
-        return f'R$ {dolars:.2f}'
+        return f'R$ {self.dolars_value:.2f}'
